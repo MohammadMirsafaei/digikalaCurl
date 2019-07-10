@@ -1,6 +1,8 @@
 body {
     background-image: url('../img/bg.png');
     margin-top: 100px;
+    direction: rtl;
+    text-align: center;
 }
 
 .center {
