@@ -21,6 +21,11 @@ class CurlEngine {
         $this->Body = curl_exec($this->CurlHandler);
     }
 
+    public function GetStatusCode() : int 
+    {
+        return (int)curl_getinfo($this->CurlHandler, CURLINFO_HTTP_CODE);
+    }
+
     public function GetBody() : string 
     {
         return $this->Body;

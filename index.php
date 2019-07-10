@@ -7,7 +7,7 @@ use DigikalaCurl\DigikalaPage;
 
 if(isset($_GET['url']) && $_GET['url'] != "")
 {
-    if(preg_match("^https:\/\/digikala\.com\/product\/dkp-\d+$",$_GET['url']))
+    if(preg_match("/^https:\/\/www\.digikala\.com\/product\/dkp-\d+$/",$_GET['url']))
     {
         $CE = new CurlEngine($_GET['url']);
     }
@@ -21,6 +21,7 @@ else
     $CE = new CurlEngine();
 }
 $CE->Exec();
+if($CE->GetStatusCode() == 404) {header("Location:/");}
 $DP = new DigikalaPage($CE->GetBody());
 ?>
 
