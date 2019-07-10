@@ -10,6 +10,20 @@ class ComposerStaticInit9d99ffcc06246a4db291ef1a09f07690
         '6d24ec41656f2a8977f18c371fd6f1a2' => __DIR__ . '/..' . '/mgargano/simplehtmldom/src/simple_html_dom.php',
     );
 
+    public static $prefixLengthsPsr4 = array (
+        'D' => 
+        array (
+            'DigikalaCurl\\' => 13,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'DigikalaCurl\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/classes',
+        ),
+    );
+
     public static $prefixesPsr0 = array (
         'S' => 
         array (
@@ -20,10 +34,20 @@ class ComposerStaticInit9d99ffcc06246a4db291ef1a09f07690
         ),
     );
 
+    public static $classMap = array (
+        'DigikalaCurl\\CurlEngine' => __DIR__ . '/../..' . '/classes/CurlEngine.php',
+        'DigikalaCurl\\DigikalaPage' => __DIR__ . '/../..' . '/classes/DigikalaPage.php',
+        'SimpleHtmlDom\\simple_html_dom' => __DIR__ . '/..' . '/mgargano/simplehtmldom/src/simple_html_dom.php',
+        'SimpleHtmlDom\\simple_html_dom_node' => __DIR__ . '/..' . '/mgargano/simplehtmldom/src/simple_html_dom.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInit9d99ffcc06246a4db291ef1a09f07690::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit9d99ffcc06246a4db291ef1a09f07690::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit9d99ffcc06246a4db291ef1a09f07690::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit9d99ffcc06246a4db291ef1a09f07690::$classMap;
 
         }, null, ClassLoader::class);
     }
