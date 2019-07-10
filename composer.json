@@ -1,0 +1,10 @@
+{
+    "require": {
+        "mgargano/simplehtmldom": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "DigikalaCurl\\":"classes/"
+        }
+    }
+}
